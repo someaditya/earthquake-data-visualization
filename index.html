@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<h1> Visualization of Real Time Earthquakes</h1> 
+<h2> Based on Real Time Data shared by United States Geological Survey</h2>
+<div id="myDropdown" class="dropdown-content">
+       <label id= "label">Select Time </label>
+             <select id = "myList">
+             <option selected="">Please Select</option>
+             <option value ="yr1">Last One Hour</option>
+             <option value ="yr2">Last All Day</option>
+             <option value ="yr3">Last All Week</option>
+             <option value ="yr4">Last All Month</option>           
+             </select>
+              <button id="showBars" onclick="showBars();">Show Visualization </button>
+  </div>
+  <div id="myShow" class="dropdown-content"></div>
+<label margin-top=100px>Heatmap</label>
+<div id="heatmap-canvas" style="width:1400px; height:720px; margin-left: 20px" ></div>
+<label>Real Time GPS Based Visualization Last 24 Hours (Auto-Refresh)</label>
+<iframe src="earthquakes.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0" style="width:1400px; height:720px; margin-left: 20px" ></iframe>
+
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+<script src="index.js "></script>
+<link rel="stylesheet" href="main.css">
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"></script>
+<script src="leaflet-realtime.js"></script>
