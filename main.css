@@ -1,30 +1,30 @@
 body {
-  background: #F0FFFF;
+  background:#B5E2E2;
 }
 
 h1 {
-font: bold 2em/1em "Impact", "MS Serif", "New York", serif;
+font: bold 2em/1em "Arial Black", "MS Serif", "New York", serif;
 margin: 0;
 padding: 0;
-color: #000000;
+color: #053E5C;
 border-top: solid #000000 medium;
-width: 1000px;
+text-align: center;
 }
 
 h2 {
-font: bold 2em/1em "Impact", "MS Serif", "New York", serif;
+font: bold 2em/1em "Arial Black", "MS Serif", "New York", serif;
 margin: 0;
 padding: 0;
-color: #2F4F4F;
+color: #065985;
 border-top: solid #000000 medium;
 border-bottom: dotted #2F4F4F thin;
-width: 1000px;
+text-align: center;
 }
 
 select {
   -webkit-appearance: none;
   appearance: none;
-  font:  400 13px/1.3 "Impact", "MS Serif", "New York", serif;
+  font:  400 13px/1.3 "Arial Black", "MS Serif", "New York", serif;
   border: 1px solid #3b5998;
   line-height: 1;
   outline: 0;
@@ -43,6 +43,7 @@ select {
 
 button {
     background-color: #3b5998; /* Green */
+    font:  400 13px/1.3 "Arial Black", "MS Serif", "New York", serif;
     border: none;
     color: white;
     padding: 6px 20px;
@@ -53,9 +54,10 @@ button {
 }
 
 label{
-	
-	font:  400 20px/1.3 "Impact", "MS Serif", "New York", serif;
+	display: block;
+	font:  400 20px/1.3 "Arial Black", "MS Serif", "New York", serif;
 	color: #3b5998;
+  text-align: center;
 
 }
 
@@ -74,20 +76,17 @@ footer {
 svg {
     margin: 0 auto;
     display: block;
-    background: #bbb;
+    background: #a7cdf2;
 }
 
-.sphere {
-    fill: #bbb;
-}
 
 .land {
-    fill: #666;
+    fill: #fff;
 }
 
 .boundry {
     fill: none;
-    stroke: #bbb;
+    stroke: #006994;
     stroke-linejoin: round;
     stroke-linecap: round;
     vector-effect: non-scaling-stroke;
@@ -98,3 +97,16 @@ svg {
     pointer-events: all;
 }
 
+.legend-mag-text {
+  font-size: 9px;
+  fill: black;
+  font-weight: bold;
+}
+
+.legend-box {
+  fill: white;
+  stroke: black;
+  stroke-width: 0.75px;
+  rx: 10;
+  ry: 10;
+}

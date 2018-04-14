@@ -3,7 +3,13 @@
 
 <h1> Visualization of Real Time Earthquakes</h1> 
 <h2> Based on Real Time Data shared by United States Geological Survey</h2>
-<div id="myDropdown" class="dropdown-content">
+<label margin-top=100px>Real Time Animation based on last 24hr Data</label>
+<svg id="svg" width="1400" height="720"></svg>
+
+<label>Real Time GPS Based Visualization Last 24hr Data (Refreshed every 30 seconds)</label>
+<iframe src="earthquakes.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0" style="width:1400px; height:720px; margin-left: 20px" ></iframe>
+
+<div id="myDropdown" class="dropdown-content" align="center">
        <label id= "label">Select Time </label>
              <select id = "myList">
              <option selected="">Please Select</option>
@@ -14,17 +20,21 @@
              </select>
               <button id="showBars" onclick="showBars();">Show Visualization </button>
   </div>
-  <div id="myShow" class="dropdown-content"></div>
-<label margin-top=100px>Heatmap</label>
+<label margin-top=100px>Real Time Heatmap based on User Input</label>
 <div id="heatmap-canvas" style="width:1400px; height:720px; margin-left: 20px" ></div>
-<label>Real Time GPS Based Visualization Last 24 Hours (Auto-Refresh)</label>
-<iframe src="earthquakes.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0" style="width:1400px; height:720px; margin-left: 20px" ></iframe>
-
+<link rel="stylesheet" href="main.css">
 <script src="http://d3js.org/d3.v4.min.js"></script>
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
-<script src="index.js "></script>
-<link rel="stylesheet" href="main.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"></script>
-<script src="leaflet-realtime.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+<script src="index.js "></script>
+
+<footer align="center">
+     <div id="cite"><b>*</b>Data source: <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">United States Geological Survey (USGS)</a></div>
+</footer>
+
+
