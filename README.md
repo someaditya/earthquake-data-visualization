@@ -22,6 +22,8 @@ Here are the list of real time APIs used for this project :-
 4.Past One Month - https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson  
 
 ## Real Time Animation
+For the maps this makes use of World Atlas TopoJSON (https://github.com/topojson/world-atlas) , which generates TopoJSON files from Natural Earth’s vector data.A TopoJSON topology containing two geometry collections: countries and land, in this project only world.objects.countries is used.
+This work is inspired from Anthony Skelton's D3.js Earthquake Visualizations (https://anthonyskelton.com/2016/d3-js-earthquake-visualizations/).
 
 ## Real Time Marker Updates
 ![GTD Logo](/image/edv1.png)
