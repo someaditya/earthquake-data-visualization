@@ -1,22 +1,20 @@
-var map2 = L.map('heatmap-canvas').setView([21.3891, 39.8579], 2);
+var map2 = L.map('heatmap-canvas').setView([21.3891, 19.8579], 1);
 mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
 
 L.tileLayer(
     'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
          attribution: '&copy; <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">USGS Earthquake Hazards Program</a>, &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 23,
+        maxZoom: 20,
     }).addTo(map2);
 
 var heatMap = L.heatLayer(0, {
     radius: 15,
     blur: 15,
-    maxZoom: 10,
+    maxZoom: 50,
 }).addTo(map2);
 
 
 realtimeview()
-
-
 
 
 function heatmap(api) {
@@ -38,8 +36,8 @@ function heatmap(api) {
         var geoData = geoJson2heat(obs);
         //console.log(geoData)
         heatMap = L.heatLayer(geoData, {
-            radius: 15,
-            blur: 18,
+            radius: 10,
+            blur: 15,
             maxZoom: 10
         }).addTo(map);
     }
@@ -48,7 +46,7 @@ function heatmap(api) {
     });
 }
 
-function showHeatMMap() {
+document.getElementById("myList").onchange = function() {
 
     if (document.getElementById("myList").value == "yr1") {
         heatmap("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson")
@@ -59,7 +57,7 @@ function showHeatMMap() {
     } else {
         heatmap("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson")
     }
-}
+};
 
 
 
@@ -71,8 +69,8 @@ function realtimeview() {
             bottom: 20,
             left: 20
         },
-        width = 1450 - margin.left - margin.right,
-        height = 800 - margin.top - margin.bottom;
+        width = 760 - margin.left - margin.right,
+        height = 440 - margin.top - margin.bottom;
 
     // Set the projection methods for the world map
     var projection = d3.geoMercator()

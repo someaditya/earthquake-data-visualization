@@ -5,27 +5,40 @@
 <meta name="description" content="Real Time Earthquake Data Visualization using USGS Real Time API">
 <meta name="keywords" content="earthquake,visualization,datavisualization,data,realtime">
 </head>
+
 <h1> Visualization of Real Time Earthquakes</h1> 
 <h2> Based on Real Time Data shared by United States Geological Survey</h2>
-<label margin-top=100px>Real Time Animation based on last 24hr Data</label>
-<svg id="svg" width="1400" height="720"></svg>
+<h3> Real Time Animation based on last 24hr Data</h3>
 
-<label>Real Time GPS Based Visualization Last 24hr Data (Refreshed every 30 seconds)</label>
-<iframe src="earthquakes.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0" style="width:1400px; height:720px; margin-left: 20px" ></iframe>
 
-<div id="myDropdown" class="dropdown-content" align="center">
-       <label id= "label">Select Time </label>
-             <select id = "myList">
+<div id="contentframe1" style="position:relative; top: 0px; left: 0px;">
+<svg id="svg" width="700" height="360"></svg>
+</div>
+
+
+<div id="contentframe2" style="position:relative; top: 5px; left: 750px;">
+<label style="left: 750px; top: 5px">Real Time GPS Based Visualization Last 24hr (Refreshed 30 seconds)</label>
+<iframe src="earthquakes.html" name="targetframe" allowTransparency="true"  frameborder="0" style="position:absolute; width:700; height:180;" ></iframe>
+</div>
+
+
+<div id="contentframe3" style="position:absolute; top: 335px; left: 750px;">
+<label style="left: 750px; top: 5px">Real Time Heat Map of Earthquakes around the World (Refreshed 30 seconds)</label>
+ 
+<div id="myDropdown" class="dropdown-content" align="right"  > 
+<select id = "myList">
              <option selected="">Please Select</option>
              <option value ="yr1">Last One Hour</option>
              <option value ="yr2">Last All Day</option>
              <option value ="yr3">Last All Week</option>
              <option value ="yr4">Last All Month</option>           
              </select>
-              <button id="showBars" onclick="showHeatMMap();">Show Visualization </button>
-  </div>
-<label margin-top=100px>Real Time Heatmap based on User Input</label>
-<div id="heatmap-canvas" style="width:1400px; height:720px; margin-left: 20px" ></div>
+             
+             <noscript><input type="submit" value="Submit"></noscript>
+
+</div>
+
+<div id="heatmap-canvas" style="width:700; height:200px; " ></div>
 <link rel="stylesheet" href="main.css">
 <script src="http://d3js.org/d3.v4.min.js"></script>
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
@@ -35,9 +48,8 @@
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="https://unpkg.com/topojson-client@3"></script>
 <script src="index.js "></script>
+</div>
 
-<footer align="center">
-     <div id="cite"><b>*</b>Data source: <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">United States Geological Survey (USGS)</a></div>
-</footer>
+
 
 
