@@ -1,5 +1,5 @@
 body {
-  background:#faf7f0;
+  background:#000000;
 }
 
 h1 {
@@ -7,7 +7,7 @@ font: bold 2em/1em "Arial Black", "MS Serif", "New York", serif;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 margin: 0;
 padding: 0;
-color: #053E5C;
+color: #ffff;
 border-top: solid #000000 medium;
 text-align: center;
 }
@@ -17,7 +17,7 @@ font: bold 2em/1em "Arial Black", "MS Serif", "New York", serif;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 margin: 0;
 padding: 0;
-color: #065985;
+color: #d6d0d0;
 border-top: solid #000000 medium;
 border-bottom: dotted #2F4F4F thin;
 text-align: center;
@@ -28,13 +28,11 @@ font: 1em/1em "Arial Black", "MS Serif", "New York", serif;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 margin: 0;
 padding: 0;
-color: #065985;
+color: #ded9d9;
 border-top: solid #000000 medium;
 border-bottom: dotted #2F4F4F thin;
 text-align: center;
 }
-
-@import url('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css');
 
 select {
   -webkit-appearance: none;
@@ -54,15 +52,13 @@ select {
 footer {
   bottom:0;
   left:0;
-  color: #3b5998;
+  color: #ffff;
   font:  400 10px/1.3 "Impact", "MS Serif", "New York", serif;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width:100%;
   position:fixed; 
   text-align: center;
 }
-
-
 
 button {
     background-color: #3b5998; /* Green */
@@ -79,10 +75,21 @@ button {
 label{
 	display: block;
   font:  400 12px/1.3 "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif;
-	color: #3b5998;
+	color: #ded9d9;
 
 }
 
+footer {
+	bottom:0;
+	left:0;
+	color: #3b5998;
+	font:  400 20px/1.3 "Impact", "MS Serif", "New York", serif;
+	position:center;
+    overflow:hidden;
+    margin:0 auto;
+    top: 1000px;
+	
+}
 
 svg {
     margin: 0 auto;

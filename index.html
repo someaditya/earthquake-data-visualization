@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link href="main.css" id="styles" rel="stylesheet" type="text/css" />
 <head>
 <title>Earthquake Data Visualization</title>
 <meta name="description" content="Real Time Earthquake Data Visualization using USGS Real Time API">
@@ -11,35 +16,32 @@
 <h3> Real Time Animation based on last 24hr Data</h3>
 
 
-<div id="contentframe1" style="position:relative; top: 0px; left: 0px;">
+<div id="contentframe1" style="position:relative; top: 0px; left: 50px;">
 <svg id="svg" width="700" height="360"></svg>
 </div>
 
 
-<div id="contentframe2" style="position:relative; top: 5px; left: 750px;">
-<label style="left: 750px; top: 5px">Real Time GPS Based Visualization Last 24hr (Refreshed 30 seconds)</label>
-<iframe src="earthquakes.html" name="targetframe" allowTransparency="true"  frameborder="0" style="position:absolute; width:700; height:180;" ></iframe>
+<div id="contentframe2" style="position:relative; top: 0px; left: 810px;">
+<label style="left: 810px; top: 0px">Real Time GPS Based Visualization Last 24hr (Refreshed every 30 seconds)</label>
+<iframe width="550px" height="230" src="earthquakes.html" name="targetframe" allowTransparency="true"  frameborder="0" ></iframe>
 </div>
 
 
-<div id="contentframe3" style="position:absolute; top: 335px; left: 750px;">
-<label style="left: 750px; top: 5px">Real Time Heat Map of Earthquakes around the World (Refreshed 30 seconds)</label>
- 
-<div id="myDropdown" class="dropdown-content" align="right"  > 
-<select id = "myList">
-             <option selected="">Please Select</option>
+<div id="contentframe3" style="position:absolute; top: 335px; left: 810px;">
+<label for="myList" style="left: 810px; top: 10px"><span>Heat Map of Earthquakes around the World </span>
+<select id = "myList" align="right">
+             <option selected="">Select Time</option>
              <option value ="yr1">Last One Hour</option>
              <option value ="yr2">Last All Day</option>
              <option value ="yr3">Last All Week</option>
              <option value ="yr4">Last All Month</option>           
              </select>
-             
              <noscript><input type="submit" value="Submit"></noscript>
 
-</div>
+</label>
 
-<div id="heatmap-canvas" style="width:700; height:200px; " ></div>
-<link rel="stylesheet" href="main.css">
+
+<div id="heatmap-canvas" style="width:550px; height:225px;top: 0px" ></div>
 <script src="http://d3js.org/d3.v4.min.js"></script>
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
@@ -50,6 +52,30 @@
 <script src="index.js "></script>
 </div>
 
+<div id="contentframe4" style="position:relative; top: 260px; left: 1200px;">
+<input type=button id="mode" text="Switch Mode" class="btn btn-primary" value="Switch To Dark Mode"> 
 
+</div>
 
+<script>
+$(document).ready(function(){
+$('#mode').click(function(){
+if($('link#styles').attr('href')=="main.css"){
+$('#mode').attr('value','Switch To Light Mode')
+$('link#styles').attr('href','dark.css')
+}
+else
+{
+$('#mode').attr('value','Switch To Dark Mode')
+$('link#styles').attr('href','main.css')
+}
+})
+});
+</script>
+
+<footer>
+  <p>Author: Some Aditya Mandal</p>
+  <p><a href="mailto:someaditya@live.in">someaditya@live.in</a></p>
+  <p>The data used in this dashboard is obtained by using the API provided by  <a href="https://earthquake.usgs.gov/">USGS</a></p>
+</footer>
 
